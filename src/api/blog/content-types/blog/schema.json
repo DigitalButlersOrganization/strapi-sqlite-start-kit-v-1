@@ -84,6 +84,15 @@
       "type": "uid",
       "targetField": "articleName",
       "required": true
+    },
+    "shortDescription": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "required": true
     }
   }
 }

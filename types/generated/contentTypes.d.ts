@@ -422,6 +422,13 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    shortDescription: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     singleImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     > &
