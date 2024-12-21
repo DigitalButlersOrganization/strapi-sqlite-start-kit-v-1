@@ -93,6 +93,15 @@
       },
       "type": "text",
       "required": true
+    },
+    "dateOfCreating": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "date",
+      "required": true
     }
   }
 }
