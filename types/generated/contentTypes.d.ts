@@ -373,6 +373,7 @@ export interface ApiBlogCategoryBlogCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'blog_categories';
   info: {
+    description: '';
     displayName: 'Blog Category';
     pluralName: 'blog-categories';
     singularName: 'blog-category';
@@ -386,6 +387,18 @@ export interface ApiBlogCategoryBlogCategory
     };
   };
   attributes: {
+    backgroundColor: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 7;
+        minLength: 4;
+      }> &
+      Schema.Attribute.DefaultTo<'#000000'>;
     categoryName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
@@ -403,6 +416,18 @@ export interface ApiBlogCategoryBlogCategory
       'api::blog-category.blog-category'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    textColor: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 7;
+        minLength: 4;
+      }> &
+      Schema.Attribute.DefaultTo<'#ffffff'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -434,6 +459,10 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    blogCategories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blog-category.blog-category'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

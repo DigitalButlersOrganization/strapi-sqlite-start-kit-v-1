@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog-category",
     "pluralName": "blog-categories",
-    "displayName": "Blog Category"
+    "displayName": "Blog Category",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,32 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "backgroundColor": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string",
+      "regex": "^#([a-fA-F0-9]{3}|[a-fA-F0-9]{6}|[a-fA-F0-9]{8})$",
+      "default": "#000000",
+      "required": true,
+      "maxLength": 7,
+      "minLength": 4
+    },
+    "textColor": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string",
+      "regex": "^#([a-fA-F0-9]{3}|[a-fA-F0-9]{6}|[a-fA-F0-9]{8})$",
+      "default": "#ffffff",
+      "maxLength": 7,
+      "minLength": 4,
+      "required": true
     }
   }
 }

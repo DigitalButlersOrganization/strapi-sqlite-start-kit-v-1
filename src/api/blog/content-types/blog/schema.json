@@ -102,6 +102,11 @@
       },
       "type": "date",
       "required": true
+    },
+    "blogCategories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog-category.blog-category"
     }
   }
 }
